@@ -181,6 +181,9 @@ app.use(compression());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.get('/test', (req, res) => {
+  res.send('Hello World!')
+})
 app.use("/api/auth", authRoute);
 app.use("/api/user", userRoute);
 app.use("/api/product", adRoute);

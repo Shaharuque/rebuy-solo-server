@@ -17,6 +17,7 @@ import openAIRoute from "./route/openAIRoute";
 import payRoute from './route/payRoute'
 
 const roooms = ["general", "random", "news", "games", "coding"];
+const port = process.env.PORT || 9000;
 
 // Socket IO server connected on 8080 port
 const httpServer = createServer();
@@ -113,7 +114,7 @@ app.use((err: any, req: any, res: any, next: any) => {
   });
 });
 
-app.listen(9000, () => {
+app.listen(port, () => {
   connect();
   console.log("Connected to backend.");
 });
